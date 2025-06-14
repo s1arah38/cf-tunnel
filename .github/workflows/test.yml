@@ -19,4 +19,4 @@ jobs:
     - name: Keep runner alive for 4 hours
       run: |
         echo "Sleeping for 4 hours to keep session active..."
-        Start-Sleep -Seconds 14400
+        Sleep 14400

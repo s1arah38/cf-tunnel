@@ -1,6 +1,7 @@
 name: Test
 
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   testsolaris:
@@ -14,5 +15,8 @@ jobs:
       with:
         protocol: tcp
         port: 22
-    - name: sleep
-      run: sleep 30
+        
+    - name: Keep runner alive for 4 hours
+      run: |
+        echo "Sleeping for 4 hours to keep session active..."
+        Start-Sleep -Seconds 14400
